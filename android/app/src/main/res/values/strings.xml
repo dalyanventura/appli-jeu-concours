@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Concours Radar</string>
+
+    <!-- Feed -->
+    <string name="feed_title">Concours Radar</string>
+    <string name="sort_recent">Plus récents</string>
+    <string name="sort_ending_soon">Se terminent bientôt</string>
+    <string name="sort_label">Trier</string>
+    <string name="account_all">Tous les comptes</string>
+    <string name="account_filter">\@%1$s</string>
+    <string name="account_sheet_title">Comptes suivis</string>
+    <string name="account_search">Rechercher un compte</string>
+    <string name="account_sheet_hint">Seuls les concours lus directement sur ces comptes portent leur nom ; ceux trouvés par hashtag n\'apparaissent pas dans ce filtre.</string>
+    <string name="account_none">Aucun compte suivi pour l\'instant.</string>
+    <string name="clear_filters">Effacer les filtres</string>
+
+    <!-- Entry types -->
+    <string name="entry_instagram">Sur Instagram</string>
+    <string name="entry_purchase">Avec achat</string>
+    <string name="entry_in_store">En magasin</string>
+    <string name="entry_external_form">Sur un site</string>
+    <string name="entry_other">Autre</string>
+
+    <!-- Card -->
+    <string name="deadline_today">Dernier jour !</string>
+    <string name="deadline_tomorrow">Se termine demain</string>
+    <string name="deadline_on">Jusqu\'au %1$s</string>
+    <string name="by_account">\@%1$s</string>
+    <string name="open_post">Ouvrir la publication sur Instagram</string>
+    <string name="video">Vidéo</string>
+
+    <!-- States -->
+    <string name="empty_title">Aucun concours ne correspond à ces filtres</string>
+    <string name="error_title">Impossible de charger les concours</string>
+    <string name="error_body">Vérifiez votre connexion internet, puis réessayez.</string>
+    <string name="error_config">L\'app n\'est pas configurée : renseignez SUPABASE_URL et SUPABASE_PUBLISHABLE_KEY (voir android/README).</string>
+    <string name="retry">Réessayer</string>
+</resources>

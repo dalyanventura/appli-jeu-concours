@@ -20,3 +20,6 @@ captures/
 .externalNativeBuild/
 .cxx/
 *.egg-info/
+
+# Android build outputs
+android/local.properties
