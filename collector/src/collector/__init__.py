@@ -1,0 +1,1 @@
+"""Instagram contest collector."""

@@ -1,0 +1,58 @@
+{
+  "_comment": "Synthetic page modelled on the phase 0 probe (27/11/2026): fictional accounts, same shapes and edge cases.",
+  "data": [
+    {
+      "id": "1001",
+      "caption": "🎁 JEU CONCOURS 🎁\nGagne un panier gourmand !\n1️⃣ Abonne-toi à boulangerie_exemple\n2️⃣ Like ce post\n3️⃣ Identifie 2 amis\n🗓️ Tirage au sort le 12 décembre.\n#jeuconcours #concours",
+      "media_type": "IMAGE",
+      "media_url": "https://scontent.example/1001.jpg?oe=6B0F2DE1",
+      "permalink": "https://www.instagram.com/p/EXAMPLE1001/",
+      "timestamp": "2026-11-27T11:20:00+0000"
+    },
+    {
+      "id": "1002",
+      "caption": "Un reel sans miniature : 2 places de cinéma à gagner, abonne-toi et commente ! #jeuconcours",
+      "media_type": "VIDEO",
+      "permalink": "https://www.instagram.com/reel/EXAMPLE1002/",
+      "timestamp": "2026-11-27T11:15:00+0000"
+    },
+    {
+      "id": "1003",
+      "caption": "À l'occasion du Black Friday, on met 500 € en jeu : 5 gagnants, 100 € chacun 🖤\n\n• Télécharge l'appli Exemplo\n#jeuconcours🎁 #jeuconcours",
+      "media_type": "VIDEO",
+      "media_url": "https://scontent.example/1003.mp4",
+      "permalink": "https://www.instagram.com/reel/EXAMPLE1003/",
+      "timestamp": "2026-11-27T11:19:48+0000"
+    },
+    {
+      "id": "1004",
+      "caption": "À l’occasion du Black Friday, on met 500€ en jeu : 5 gagnants, 100€ chacun 🖤 \n• Télécharge l’appli Exemplo\n#jeuconcours🎁 #jeuconcours",
+      "media_type": "VIDEO",
+      "media_url": "https://scontent.example/1004.mp4",
+      "permalink": "https://www.instagram.com/reel/EXAMPLE1004/",
+      "timestamp": "2026-11-27T11:08:45+0000"
+    },
+    {
+      "id": "1005",
+      "caption": "𝗝𝗘𝗨 𝗖𝗢𝗡𝗖𝗢𝗨𝗥𝗦 – carte cadeau de 50 € à gagner ! #JeuConcours",
+      "media_type": "CAROUSEL_ALBUM",
+      "media_url": "https://scontent.example/1005.heic?stp=dst-jpg",
+      "permalink": "https://www.instagram.com/p/EXAMPLE1005/",
+      "timestamp": "2026-11-27T11:05:00+0000"
+    },
+    {
+      "id": "1006",
+      "caption": "Type de média inconnu",
+      "media_type": "SOMETHING_NEW",
+      "permalink": "https://www.instagram.com/p/EXAMPLE1006/",
+      "timestamp": "2026-11-27T11:00:00+0000"
+    },
+    {
+      "id": "1007",
+      "media_type": "IMAGE",
+      "media_url": "https://scontent.example/1007.jpg",
+      "permalink": "https://www.instagram.com/p/EXAMPLE1007/",
+      "timestamp": "2026-11-27T10:55:00+0000"
+    }
+  ]
+}

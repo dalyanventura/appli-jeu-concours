@@ -1,0 +1,329 @@
+# Thèmes : source de vérité des slugs (doivent correspondre à la table `categories`).
+# Chaque mot-clé est une expression régulière cherchée en début de mot, dans la légende
+# mise en minuscules et SANS accents (écrire « deco », pas « déco ») : « parfum » trouve « parfums ».
+# Mettre \b à la fin pour exiger le mot entier. Un post peut avoir jusqu'à 3 thèmes
+# (ceux qui ont le plus de mots-clés) ; sans aucun mot-clé → « autre ».
+# Les hashtags de collecte comptent aussi (ex. #concoursbeaute → beaute_bien_etre).
+
+categories:
+  mode_bijoux:
+    - mode\b
+    - vetement
+    - sac\b
+    - sacs\b
+    - sac a main
+    - bijou
+    - collier
+    - bracelet
+    - boucles? d.oreilles
+    - bague
+    - montre\b
+    - montres\b
+    - chaussure
+    - baskets?\b
+    - sneakers?
+    - ugg\b
+    - pull\b
+    - robe\b
+    - manteau
+    - echarpe
+    - lunettes?
+    - opticien
+    - pret.a.porter
+    - fashion
+    - tote.?bag
+    - pochette
+    - sacoche
+    - maroquinerie
+    - lingerie
+
+  beaute_bien_etre:
+    - beaute
+    - beauty
+    - parfum
+    - maquillage
+    - make.?up
+    - mascara
+    - rouge a levres
+    - cosmetique
+    - soins?\b
+    - creme
+    - serum
+    - skincare
+    - massage
+    - drainage
+    - spa\b
+    - institut
+    - esthetique
+    - estheticienne
+    - coiffure
+    - coiffeur
+    - salon de beaute
+    - ongles
+    - nails?\b
+    - manucure
+    - bien.etre
+    - huiles? essentielles?
+    - shampo
+    - rituel
+    - bougie
+    - yoga
+    - sauna
+
+  jeux_video:
+    - jeux? video
+    - gaming
+    - gamer
+    - ps5\b
+    - ps4\b
+    - playstation
+    - xbox
+    - nintendo
+    - switch 2
+    - manette
+    - steam\b
+    - gta\b
+    - fortnite
+    - pokemon
+    - jeu pc
+
+  jeux_societe:
+    - jeux? de societe
+    - boardgame
+    - jeu de plateau
+    - jeu de cartes
+    - puzzle
+    - lego
+    - escape game
+
+  high_tech:
+    - high.?tech
+    - smartphone
+    - iphone
+    - samsung
+    - tablette
+    - ipad
+    - ordinateur
+    - pc portable
+    - casque
+    - ecouteurs
+    - airpods
+    - enceinte
+    - television
+    - tv\b
+    - drone
+    - appareil photo
+    - camera
+    - montre connectee
+    - robot
+    - aspirateur
+    - tineco
+    - dyson
+    - thermomix
+    - airfryer
+    - air fryer
+    - friteuse
+
+  deco_maison:
+    - decos?\b
+    - decoration
+    - decor\b
+    - decoratif
+    - interieur
+    - meuble
+    - canape
+    - luminaire
+    - lampe
+    - coussin
+    - plaid
+    - vaisselle
+    - poele\b
+    - casserole
+    - ustensile
+    - linge de
+    - tableau\b
+    - toile\b
+    - affiche
+    - vase
+    - mobilier
+    - agencement
+    - dressing
+    - literie
+    - matelas
+
+  bricolage:
+    - bricolage
+    - outil
+    - perceuse
+    - jardin
+    - jardinage
+    - jardiland
+    - plantes?\b
+    - bonsai
+    - potager
+    - graines
+    - couteau
+    - diy\b
+
+  cinema_series:
+    - cinema
+    - film\b
+    - films\b
+    - serie\b
+    - series\b
+    - dvd
+    - blu.?ray
+    - netflix
+    - disney
+    - avant.premiere
+    - places? de cine
+
+  livres:
+    - livre
+    - roman\b
+    - lecture
+    - bibliotheque
+    - librair
+    - ebook
+    - bd\b
+    - bande dessinee
+    - manga
+    - auteur
+    - autrice
+    - exemplaire
+
+  gastronomie:
+    - gastronomie
+    - gourmand
+    - chocolat
+    - patisserie
+    - gateau
+    - restaurant
+    - resto\b
+    - repas
+    - diner
+    - brunch
+    - cuisine
+    - recette
+    - vin\b
+    - vins\b
+    - champagne
+    - biere
+    - fromage
+    - epicerie
+    - box gourmande
+    - cafe\b
+    - infusion
+    - pizza
+    - burger
+    - salade
+    - calendrier de l.avent (gourmand|chocolat|lindt)
+    - lindt
+    - foie gras
+    - traiteur
+
+  voyage:
+    - voyage
+    - sejour
+    - week.end
+    - nuit\b
+    - nuits\b
+    - hotel
+    - gite
+    - cabane
+    - escapade
+    - vacances
+    - billet d.avion
+    - croisiere
+    - thailande
+    - tenerife
+    - camping
+    - chambre d.hotes
+
+  sorties_evenements:
+    - \d+ places?\b
+    - places? (pour|de concert|de cine|offertes|a gagner)
+    - billets?\b
+    - tickets?\b
+    - concert
+    - spectacle
+    - theatre
+    - festival
+    - salon (du|de l.|des)\b
+    - parc d.attraction
+    - futuroscope
+    - disneyland
+    - zoo\b
+    - forfait de ski
+    - match\b
+    - exposition
+    - soiree
+    - humoriste
+    - one man show
+    - bapteme
+    - circuit
+
+  sport:
+    - sport
+    - fitness
+    - musculation
+    - running
+    - velo
+    - ski\b
+    - football
+    - foot\b
+    - rugby
+    - tennis
+    - padel
+    - basket\b
+    - salle de sport
+    - coach
+    - maillot
+    - randonnee
+    - pilote
+    - golf
+
+  enfants_famille:
+    - enfants?
+    - bebe
+    - kids?\b
+    - jouets?
+    - doudou
+    - peluche
+    - poussette
+    - maternite
+    - naissance
+    - maman
+    - famille
+    - puericulture
+    - ecole
+    - educatif
+    - figurine
+
+  animaux:
+    - animaux
+    - animal
+    - chiens?\b
+    - chats?\b
+    - chiot
+    - chaton
+    - croquettes
+    - friandises pour
+    - veterinaire
+    - toilettage
+    - equitation
+    - cheval
+    - chevaux
+
+  bons_achat:
+    - bons? d.achat
+    - cartes? cadeaux?
+    - e.carte
+    - cheques? cadeaux?
+    - \d+ ?(€|euros?) (a depenser|de bon|offerts? en)
+    - a depenser
+    - virement
+    - especes
+    - remboursement
+    - rembourse
+    - points? (fidelite|insiders)

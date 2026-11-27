@@ -1,0 +1,22 @@
+# Secrets
+.env
+*.keystore
+*.jks
+local.properties
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+collector/probe_output/
+
+# Android / Gradle
+.gradle/
+build/
+.idea/
+*.iml
+captures/
+.externalNativeBuild/
+.cxx/
+*.egg-info/

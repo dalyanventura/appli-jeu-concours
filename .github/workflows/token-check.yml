@@ -1,0 +1,38 @@
+name: Vérification du token
+
+on:
+  schedule:
+    - cron: "5 7 * * *"     # every day at 07:05 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write            # keep-alive below
+
+jobs:
+  token:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: collector/pyproject.toml
+      - run: pip install -e collector
+      # Fails (→ e-mail from GitHub) when the token expires within 7 days or lacks a permission.
+      - name: Check Instagram token
+        working-directory: collector
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: python -m collector.ig_token check
+      # GitHub disables scheduled workflows of a public repo after 60 days without activity;
+      # re-enabling them through the API counts as activity.
+      - name: Keep scheduled workflows alive
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api -X PUT "repos/${{ github.repository }}/actions/workflows/collect.yml/enable"
+          gh api -X PUT "repos/${{ github.repository }}/actions/workflows/token-check.yml/enable"
