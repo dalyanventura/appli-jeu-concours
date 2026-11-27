@@ -15,6 +15,11 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 import java.time.LocalDate
 
+private fun post(id: String) = PostDto(
+    id = id, permalink = "https://www.instagram.com/p/$id/", mediaType = "IMAGE",
+    publishedAt = "2026-11-27T10:00:00+00:00",
+)
+
 class ContestPagingSourceTest {
 
     private class FakeApi(private val total: Int) : SupabaseApi {
@@ -67,9 +72,4 @@ class ContestPagingSourceTest {
         assertEquals(LocalDate.of(2026, 12, 6), contest.deadline)
         assertEquals(1795778400000L, contest.publishedAt.toEpochMilli())
     }
-
-    private fun post(id: String) = PostDto(
-        id = id, permalink = "https://www.instagram.com/p/$id/", mediaType = "IMAGE",
-        publishedAt = "2026-11-27T10:00:00+00:00",
-    )
 }
