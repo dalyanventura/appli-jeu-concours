@@ -15,6 +15,8 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 import java.time.LocalDate
 
+private val json = Json { ignoreUnknownKeys = true }
+
 private fun post(id: String) = PostDto(
     id = id, permalink = "https://www.instagram.com/p/$id/", mediaType = "IMAGE",
     publishedAt = "2026-11-27T10:00:00+00:00",
@@ -59,7 +61,7 @@ class ContestPagingSourceTest {
 
     @Test
     fun `json row maps to a contest`() {
-        val row = Json { ignoreUnknownKeys = true }.decodeFromString<PostDto>(
+        val row = json.decodeFromString<PostDto>(
             """{"ig_media_id":"1","permalink":"https://www.instagram.com/p/x/","caption":" Concours ! ",
                 "media_url":"https://cdn/x.mp4","media_type":"VIDEO","author_username":null,
                 "published_at":"2026-11-27T11:20:00+00:00","categories":["livres"],

@@ -111,7 +111,7 @@ L'interface est en **français**.
 | Planification| GitHub Actions, dépôt **public** (minutes illimitées) : `collect.yml` (cron `17 * * * *`), `token-check.yml` (quotidien + keep-alive anti-désactivation à 60 jours), `tests.yml` (push) |
 | Base         | Supabase (PostgreSQL), migrations SQL dans `supabase/migrations/`       |
 | Classification | Règles par mots-clés d'abord ; LLM en option (Claude Haiku) pour les cas ambigus et l'extraction de la date limite |
-| Android      | Kotlin, Jetpack Compose, Material 3, architecture MVVM, Hilt, Retrofit/Ktor ou `supabase-kt`, Coil, Paging 3, Room (cache hors ligne), WorkManager (notifications) |
+| Android      | Kotlin 2.2, Jetpack Compose (BOM 2025.07), Material 3, MVVM, Hilt + KSP, Retrofit 3 + kotlinx.serialization vers PostgREST (pas de `supabase-kt`), Coil 3, Paging 3 ; phase 6 : Room (cache hors ligne), WorkManager (notifications). AGP 8.12 / Gradle 8.14.3 (AGP 9.x existe : migration à faire séparément, ses changements cassants n'ont pas été vérifiés) |
 | minSdk / targetSdk | 26 / dernière version stable                                    |
 
 ## Structure du dépôt (cible)
@@ -134,7 +134,12 @@ collector/
   config/categories.yaml   # thème → mots-clés / hashtags
   tests/
 supabase/migrations/
-android/              # projet Gradle (app/)
+android/              # projet Gradle, package fr.concoursradar.app (nom provisoire « Concours Radar »)
+  app/src/main/java/fr/concoursradar/app/
+    data/             # Model.kt, PostQuery.kt (filtres → paramètres PostgREST), ContestRepository + PagingSource (offset)
+    data/remote/      # SupabaseApi (Retrofit), DTO → modèle
+    di/AppModule.kt   # OkHttp (en-tête apikey), Retrofit, Clock
+    ui/feed/          # FeedScreen, FeedViewModel, ContestCard, Filters (barre + choix du compte), Formatting
 .github/workflows/   # collect.yml (horaire), token-check.yml (quotidien), tests.yml (push)
 ```
 
@@ -195,10 +200,11 @@ cd collector && python -m venv .venv && .venv/Scripts/python -m pip install -e "
 .venv/Scripts/python scripts/export_sample.py      # posts en base → probe_output/posts.jsonl (git-ignoré)
 .venv/Scripts/python scripts/review_rules.py       # applique les règles → probe_output/review.csv + bilan
 
-# Android (Windows : gradlew.bat)
+# Android (Windows : gradlew.bat) — config Supabase : voir android/README.md
 cd android && ./gradlew assembleDebug
-./gradlew test
+./gradlew testDebugUnitTest
 ./gradlew lint
+# CI : le workflow Tests compile l'app (clé publique depuis les secrets) et publie l'APK de debug en artefact
 ```
 
 ## Conventions

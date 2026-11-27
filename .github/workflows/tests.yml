@@ -33,9 +33,12 @@ jobs:
           distribution: temurin
           java-version: "17"
       - uses: gradle/actions/setup-gradle@v4
-      # no Supabase settings in CI: the app builds "not configured" (it shows a message instead of the feed)
+      # Publishable key only (public by design, protected by RLS). The secret key must never be here.
       - name: Unit tests + debug APK
         working-directory: android
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
         run: ./gradlew --no-daemon testDebugUnitTest assembleDebug
       - uses: actions/upload-artifact@v4
         if: always()
@@ -43,3 +46,9 @@ jobs:
           name: android-reports
           path: android/app/build/reports/
           retention-days: 7
+      # Downloadable from the run page (Artifacts) to install on a phone for testing
+      - uses: actions/upload-artifact@v4
+        with:
+          name: concours-radar-debug-apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          retention-days: 30
